@@ -25,7 +25,7 @@ module.exports = (robot) ->
   robot.respond /poke play/i, (msg) ->
     startGame(msg)
 
-  robot.respond /poke it's (\w+)/i, (msg) ->
+  robot.respond /poke it'*s (\w+)/i, (msg) ->
     guessPoke(msg, msg.match[1])
 
   robot.respond /poke give up/i, (msg) ->
@@ -60,4 +60,3 @@ module.exports = (robot) ->
 
   randomInt = (min, max) ->
     Math.floor(Math.random() * (max + 1 - min) + min)
-
